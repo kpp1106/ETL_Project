@@ -1,8 +1,12 @@
-from flask import Flask, render_template
-from csv import Table, Col
+from flask import Flask, render_template, jsonify
+#from csv import Table, Col
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
 import pymongo
-#import csv
+
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func, and_
 
 # Create an instance of our Flask app.
 app = Flask(__name__)
