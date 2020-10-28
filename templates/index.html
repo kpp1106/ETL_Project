@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+  <meta charset="UTF-8">
+  <title>Group 12 ETL Project</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+​
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">20 Top SP500 Stock Information from 10-22-2020</h1>
+​
+    <!-- Create a table with the "table" class to adopt Bootstrap styling -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Close (USD)</th>
+          <th scope="col">Close (CNY)</th>
+          <th scope="col">Close (EUR)</th>
+          <th scope="col">Close (INR)</th>
+          <th scope="col">Close (PHP)</th>
+        </tr>
+      </thead>
+      <tbody>
+​
+        <!-- Within the table body, create a new table row (<tr>) for each player in our database. -->
+        {% for symbol in sym_price %}
+        <tr>
+          <td>{{ symbol.symbol }}</td>
+          <td>{{ symbol.close_usd }}</td>
+          <td>{{ symbol.close_cny }}</td>
+          <td>{{ symbol.close_eur }}</td>
+          <td>{{ symbol.close_inr }}</td>
+          <td>{{ symbol.close_php }}</td>
+        </tr>
+        {% endfor %}
+​
+      </tbody>
+    </table>
+​
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Currency</th>
+          <th scope="col">Conversion to USD</th>
+        </tr>
+      </thead>
+      <tbody>
+​
+        {% for player in players %}
+        <tr>
+          <td>{{ player.name }}</td>
+          <td>{{ player.position }}</td>
+        </tr>
+        {% endfor %}
+​
+      </tbody>
+    </table>
+​
+  </div>
+</body>
+​
+</html>
+Collapse
+
+
+
+
+
+
+
+
